@@ -42,7 +42,7 @@ const thirdPromise = new Promise((resolve) => {
 function success(result) {
   document.body.insertAdjacentHTML(
     'afterbegin',
-    '<div data-qa="notification">',
+    '<div data-qa="notification"></div>',
   );
   document.querySelector('[data-qa="notification"]').classList.add('success');
   document.querySelector('[data-qa="notification"]').innerHTML = result;
@@ -51,7 +51,7 @@ function success(result) {
 function error(result) {
   document.body.insertAdjacentHTML(
     'afterbegin',
-    '<div data-qa="notification">',
+    '<div data-qa="notification"></div>',
   );
   document.querySelector('[data-qa="notification"]').classList.add('error');
   document.querySelector('[data-qa="notification"]').innerHTML = result;
