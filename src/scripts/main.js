@@ -20,21 +20,15 @@ const secondPromise = new Promise((resolve) => {
 });
 
 const thirdPromise = new Promise((resolve) => {
-  const clicks = [];
+  const clicks = new Set();
 
   function clicker(e) {
-    if (clicks.length < 2 && !clicks.includes(e.type)) {
-      clicks.push(e.type);
-    } else {
-      clicks.length = 0;
-      clicks.push(e.type);
-    }
-
-    if (clicks.length === 2) {
+    clicks.add(e.type);
+  
+    if (clicks.size === 2) {
       resolve('Third promise was resolved');
     }
   }
-
   document.addEventListener('click', clicker);
   document.addEventListener('contextmenu', clicker);
 });
